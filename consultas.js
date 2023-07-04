@@ -49,7 +49,7 @@ const getJoyasFilter = async ({ precio_max, precio_min, categoria, metal }) => {
     console.log(consulta);
     console.log(values);
 
-    const { row: joyas } = await pool.query(consulta, values);
+    const { rows: joyas } = await pool.query(consulta, values);
     return joyas;
 }
 
