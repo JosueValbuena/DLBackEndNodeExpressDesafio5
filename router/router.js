@@ -23,6 +23,7 @@ router.get("/joyas/filtro", async (req, res, reporte) => {
         const queryString = req.query;
         const joyasfiltradas = await getJoyasFilter(queryString);
         res.json(joyasfiltradas)
+        reporte();
     } catch (error) {
         console.log(error);
         res.send(error);
