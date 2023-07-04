@@ -35,8 +35,8 @@ const getJoyasFilter = async ({ precio_max, precio_min, categoria, metal }) => {
         filtros.push(`${campo} ${comparador} $${i + 1}`)
     };
 
-    if (precio_max) addfilters("precio", ">=", precio_max);
-    if (precio_min) addfilters("precio", "<=", precio_min);
+    if (precio_max) addfilters("precio", "<=", precio_max);
+    if (precio_min) addfilters("precio", ">=", precio_min);
     if (categoria) addfilters("categoria", "=", categoria);
     if (metal) addfilters("metal", "=", metal);
 
@@ -53,8 +53,13 @@ const getJoyasFilter = async ({ precio_max, precio_min, categoria, metal }) => {
     return joyas;
 }
 
+const reporte = async () => {
+    console.log("consulta en ejecucion")
+}
+
 module.exports = {
     getJoyas,
     getJoyasHATEOAS,
-    getJoyasFilter
+    getJoyasFilter,
+    reporte
 }
